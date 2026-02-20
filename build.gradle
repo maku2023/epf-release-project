@@ -1,0 +1,39 @@
+import groovy.json.JsonBuilder
+
+task generateDeployManifest {
+group = "deployment"
+description = "Generates deploy_manifest.json for JFrog/Jenkins deployment"
+
+doLast {
+def manifest = [
+application: rootProject.name,
+version: project.version,
+components: [
+[
+name: 'main-web',
+type: 'war',
+artifact: file('main-web/build/libs/main-web.war').name,
+deployPath: '/webapps'
+],
+[
+name: 'main-ejb',
+type: 'jar',
+artifact: file('main-ejb/build/libs/main-ejb.jar').name,
+deployPath: '/ejb'
+],
+[
+name: 'main-ear',
+type: 'ear',
+artifact: file('main-ear/build/libs/main-ear.ear').name,
+deployPath: '/ear'
+]
+]
+]
+
+def json = new JsonBuilder(manifest).toPrettyString()
+file("$buildDir/deploy_manifest.json").text = json
+println "deploy_manifest.json generated at: $buildDir/deploy_manifest.json"
+}
+}
+
+
