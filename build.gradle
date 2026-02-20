@@ -1,5 +1,11 @@
 import groovy.json.JsonBuilder
 
+plugins {
+  id 'base'
+  id 'java'
+  id 'jacoco'
+}
+
 task generateDeployManifest {
 group = "deployment"
 description = "Generates deploy_manifest.json for JFrog/Jenkins deployment"
