@@ -1,0 +1,30 @@
+{
+"releaseVersion": "1.0.25",
+"environment": "QA",
+"components": [
+{
+"name": "app_frontend",
+"type": "application",
+"bundle": "app_frontend-bundle",
+"version": "1.0.25",
+"targetServer": "websphere01",
+"deployPath": "/opt/websphere/apps/"
+},
+{
+"name": "db_eopf",
+"type": "database",
+"bundle": "db_eopf-bundle",
+"version": "1.0.25",
+"dbType": "oracle",
+"scriptPath": "/db/scripts/"
+},
+{
+"name": "eopf_batch",
+"type": "batch",
+"bundle": "eopf_batch-bundle",
+"version": "1.0.25",
+"targetServer": "unix-batch01",
+"deployPath": "/opt/batch/jobs/"
+}
+]
+}
