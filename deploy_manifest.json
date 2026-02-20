@@ -11,17 +11,17 @@
 "deployPath": "/opt/websphere/apps/"
 },
 {
-"name": "db_eopf",
+"name": "db_pf",
 "type": "database",
-"bundle": "db_eopf-bundle",
+"bundle": "db_pf-bundle",
 "version": "1.0.25",
 "dbType": "oracle",
 "scriptPath": "/db/scripts/"
 },
 {
-"name": "eopf_batch",
+"name": "pf_batch",
 "type": "batch",
-"bundle": "eopf_batch-bundle",
+"bundle": "pf_batch-bundle",
 "version": "1.0.25",
 "targetServer": "unix-batch01",
 "deployPath": "/opt/batch/jobs/"
